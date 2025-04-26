@@ -1,4 +1,6 @@
-module.exports = (bot, userId, database) => {
+import { CommonCommandType } from "../../types/CommandType";
+
+export default ({ bot, userId, database }: CommonCommandType) => {
     try {
 
         if (!database.users[userId]) {

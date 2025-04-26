@@ -1,0 +1,17 @@
+{
+    "name": "telegram-bot",
+    "version": "1.0.0",
+    "description": "Bot de Telegram com sistema de saldo, pagamentos via PIX e Mercado Pago, e resgate de Gift Cards.",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "dependencies": {
+        "axios": "^1.5.0",
+        "crc": "^4.3.2",
+        "dotenv": "^16.3.1",
+        "fs": "^0.0.1-security",
+        "node-telegram-bot-api": "^0.61.0",
+        "qrcode": "^1.5.4"
+    }
+}

@@ -1,6 +1,8 @@
-module.exports = (bot, userId, database) => {
+import { CommonCommandType } from "../../types/CommandType";
+
+export default ({ bot, userId, database }: CommonCommandType) => {
     try {
-        
+
         if (!database.admins.includes(userId.toString())) {
             return bot.sendMessage(userId, '❌ Você não tem permissão para usar este comando.');
         }
@@ -16,9 +18,10 @@ module.exports = (bot, userId, database) => {
             message += `👤 <b>ID:</b> ${id} - 💰 <b>Saldo:</b> R$${balance}\n`;
         });
 
-        
+
         if (message.length > 4096) {
             const parts = message.match(/[\s\S]{1,4000}/g);
+            if (parts === null) return bot.sendMessage(userId, '❌ Ocorreu um erro ao verificar o saldo dos usuários.')
             parts.forEach(part => bot.sendMessage(userId, part, { parse_mode: 'HTML' }));
         } else {
             bot.sendMessage(userId, message, { parse_mode: 'HTML' });

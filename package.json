@@ -4,7 +4,7 @@
     "description": "Bot de Telegram com sistema de saldo, pagamentos via PIX e Mercado Pago, e resgate de Gift Cards.",
     "main": "main.js",
     "scripts": {
-        "start": "node main.js"
+        "start": "tsx main.ts --watch"
     },
     "dependencies": {
         "axios": "^1.5.0",
@@ -13,5 +13,12 @@
         "fs": "^0.0.1-security",
         "node-telegram-bot-api": "^0.61.0",
         "qrcode": "^1.5.4"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.2",
+        "@types/node-telegram-bot-api": "^0.64.8",
+        "@types/qrcode": "^1.5.5",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.3"
     }
 }

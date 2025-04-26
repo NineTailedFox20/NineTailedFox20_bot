@@ -1,6 +1,8 @@
-module.exports = (bot, userId, database) => {
+import { CommonCommandType } from "../../types/CommandType";
+
+export default ({bot, userId, database}: CommonCommandType) => {
     bot.sendMessage(userId, 'Digite o código do Gift Card:');
-    bot.once('message', (msg) => {
+    bot.once('message', (msg: any) => {
         const code = msg.text.trim();
         const giftCardIndex = database.giftCards.findIndex(gc => gc.code === code);
         if (giftCardIndex !== -1) {

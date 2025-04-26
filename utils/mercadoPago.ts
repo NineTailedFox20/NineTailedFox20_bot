@@ -1,6 +1,7 @@
-const axios = require('axios');
-const config = require('../config.json');
-module.exports.generateMercadoPagoQr = async (valor) => {
+import axios from 'axios';
+import '../config.ts';
+
+export const generateMercadoPagoQr = async (valor: string) => {
     try {
         const response = await axios.post('https://api.mercadopago.com/v1/payments', {
             transaction_amount: valor,
